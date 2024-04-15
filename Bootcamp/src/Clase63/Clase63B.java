@@ -25,7 +25,10 @@ public class Clase63B {
 	        } while (suma <= limite);
 
 	        System.out.println("La suma de los números introducidos supera el límite inicial (" + limite + ").");
-        }
+	        scanner.close(); 
 	}
+	
+	}
+
 	
 

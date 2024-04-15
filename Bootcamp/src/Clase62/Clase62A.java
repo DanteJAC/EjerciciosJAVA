@@ -19,7 +19,7 @@ public class Clase62A {
             System.out.println("Tienes 18 años actualmente.");
         }
 	
-	
+		 scanner.close();
 	
 	}
 }

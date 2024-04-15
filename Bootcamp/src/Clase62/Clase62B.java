@@ -11,7 +11,9 @@ public class Clase62B {
         System.out.print("Ingresa un número del 1 al 12: ");
         int numeroMes = scanner.nextInt();
         String mes = "";
-		
+      
+       
+        
         switch (numeroMes) {
         case 1:
             mes = "Enero";
@@ -51,10 +53,12 @@ public class Clase62B {
             break;
         default:
             System.out.println("Número inválido. Ingresa un valor entre 1 y 12.");
-            return; // Sale del programa.
+            return; // Sale del programa. 
                 
-        }
-	}
-	
 
-}
+        }scanner.close();
+   	 
+       
+	}
+
+} 

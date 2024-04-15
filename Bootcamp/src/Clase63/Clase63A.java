@@ -21,6 +21,9 @@ public class Clase63A {
         while (numeroIngresado != 0);
 
         System.out.println("Fin del programa");
+        
+        scanner.close();
 	}
-
+	
+	 
 }
