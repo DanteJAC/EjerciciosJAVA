@@ -5,17 +5,20 @@ import java.util.Scanner;
 public class Cafetera {
     private int capacidadMaxima;
     private int cantidadActual;
+    private Scanner scanner;
 
     // Constructor predeterminado o vacío
     public Cafetera() {
         this.capacidadMaxima = 1000; // Capacidad por defecto de 1000 ml
         this.cantidadActual = 0; // Inicialmente la cafetera está vacía
+        this.scanner = new Scanner(System.in);
     }
 
     // Constructor con la capacidad máxima y la cantidad actual
     public Cafetera(int capacidadMaxima, int cantidadActual) {
         this.capacidadMaxima = capacidadMaxima;
         this.cantidadActual = cantidadActual;
+        this.scanner = new Scanner(System.in);
     }
 
     // Métodos getter y setters
@@ -23,7 +26,7 @@ public class Cafetera {
         return capacidadMaxima;
     }
 
-    public void setCapacidadMaxima(int capacidadMaxima) {
+    public void setCapacidadMaxima(int capacidadMaxima) {	
         this.capacidadMaxima = capacidadMaxima;
     }
 
@@ -37,14 +40,23 @@ public class Cafetera {
 
     // Método llenaCafetera(): hace que la cantidad actual sea igual a la capacidad máxima
     public void llenaCafetera() {
-        cantidadActual = capacidadMaxima;
+        System.out.print("Ingrese la cantidad de café en mililitros para llenar la cafetera: ");
+        int cantidad = scanner.nextInt();
+        if (cantidad <= capacidadMaxima) {
+            cantidadActual = cantidad;
+            System.out.println("La cafetera se ha llenado con " + cantidad + " ml de café.");
+        } else {
+            System.out.println("La cantidad ingresada excede la capacidad máxima de la cafetera.");
+        }
     }
 
     // Método servirTaza(int): simula la acción de servir una taza con la capacidad indicada
-    public void servirTaza(int tamanoTaza) {
-        if (cantidadActual >= tamanoTaza) {
-            cantidadActual -= tamanoTaza;
-            System.out.println("Se ha llenado la taza.");
+    public void servirTaza() {
+        System.out.print("Ingrese la cantidad de café en mililitros para servir en la taza: ");
+        int cantidadTaza = scanner.nextInt();
+        if (cantidadActual >= cantidadTaza) {
+            cantidadActual -= cantidadTaza;
+            System.out.println("Se ha llenado la taza con " + cantidadTaza + " ml de café.");
         } else {
             System.out.println("No hay suficiente café en la cafetera para llenar la taza.");
             System.out.println("Se llenó la taza con " + cantidadActual + " ml de café.");
@@ -55,66 +67,42 @@ public class Cafetera {
     // Método vaciarCafetera(): define la cantidad de café actual en cero
     public void vaciarCafetera() {
         cantidadActual = 0;
+        System.out.println("La cafetera se ha vaciado.");
     }
 
-    // Método agregarCafe(int): añade a la cafetera la cantidad de café indicada
-    public void agregarCafe(int cantidad) {
-        cantidadActual += cantidad;
-        if (cantidadActual > capacidadMaxima) {
-            cantidadActual = capacidadMaxima;
-        }
+    // Método para mostrar el menú y realizar acciones
+    public void mostrarMenu() {
+        int opcion;
+        do {
+            System.out.println("\nMenú de la Cafetera:");
+            System.out.println("1. Llenar cafetera");
+            System.out.println("2. Servir taza");
+            System.out.println("3. Vaciar cafetera");
+            System.out.println("4. Salir de la cafetera");
+            System.out.print("Seleccione una opción: ");
+            opcion = scanner.nextInt();
+
+            switch (opcion) {
+                case 1:
+                    llenaCafetera();
+                    break;
+                case 2:
+                    servirTaza();
+                    break;
+                case 3:
+                    vaciarCafetera();
+                    break;
+                case 4:
+                    System.out.println("Saliendo de la cafetera...");
+                    break;
+                default:
+                    System.out.println("Opción no válida. Por favor, seleccione una opción válida.");
+            }
+        } while (opcion != 4);
     }
 
-    // Método main para probar la clase
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        // Solicitar al usuario la capacidad máxima de la cafetera
-        System.out.print("Ingrese la capacidad máxima de la cafetera en mililitros: ");
-        int capacidadMaxima = scanner.nextInt();
-
-        // Solicitar al usuario la cantidad inicial de café en la cafetera
-        System.out.print("Ingrese la cantidad inicial de café en la cafetera en mililitros: ");
-        int cantidadInicial = scanner.nextInt();
-
-        // Crear una cafetera usando el constructor con capacidad máxima y cantidad inicial
-        Cafetera miCafetera = new Cafetera(capacidadMaxima, cantidadInicial);
-
-        // Mostrar estado inicial de la cafetera
-        System.out.println("\nEstado inicial de la cafetera:");
-        System.out.println(miCafetera);
-
-        // Llenar la cafetera
-        miCafetera.llenaCafetera();
-        System.out.println("\nCafetera llenada:");
-        System.out.println(miCafetera);
-
-        // Servir una taza de café
-        System.out.print("\nIngrese la cantidad de café en mililitros que desea servir en la taza: ");
-        int cantidadTaza = scanner.nextInt();
-        miCafetera.servirTaza(cantidadTaza);
-        System.out.println(miCafetera);
-
-        // Agregar café
-        System.out.print("\nIngrese la cantidad de café en mililitros que desea agregar a la cafetera: ");
-        int cantidadAgregar = scanner.nextInt();
-        miCafetera.agregarCafe(cantidadAgregar);
-        System.out.println("Después de agregar " + cantidadAgregar + " ml de café:");
-        System.out.println(miCafetera);
-
-        // Vaciar la cafetera
-        miCafetera.vaciarCafetera();
-        System.out.println("\nCafetera vaciada:");
-        System.out.println(miCafetera);
-
-        scanner.close();
-    }
-
-    @Override
-    public String toString() {
-        return "Cafetera{" +
-                "capacidadMaxima=" + capacidadMaxima +
-                ", cantidadActual=" + cantidadActual +
-                '}';
+        Cafetera miCafetera = new Cafetera();
+        miCafetera.mostrarMenu();
     }
 }
