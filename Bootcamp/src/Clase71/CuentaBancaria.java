@@ -20,6 +20,16 @@ public class CuentaBancaria {
         return saldoActual;
     }
 
+    // Getter para saldoActual
+    public double getSaldoActual() {
+        return saldoActual;
+    }
+
+    // Setter para saldoActual
+    public void setSaldoActual(double nuevoSaldo) {
+        this.saldoActual = nuevoSaldo;
+    }
+
     public static void main(String[] args) {
         CuentaBancaria miCuenta = new CuentaBancaria(1000);
         miCuenta.ingresarDinero(500);  // Ingresa $500

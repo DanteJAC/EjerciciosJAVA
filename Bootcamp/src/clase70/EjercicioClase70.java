@@ -9,18 +9,18 @@ package clase70;
 	    // Atributos
 	    private int numCuenta;
 	    private String titular;
-	    private double saldoActual;
+	    private int saldoActual;
 
 	    // Constructor sin parámetros
 	    public EjercicioClase70() {
 	        // Se pueden asignar valores predeterminados o dejarlos en 0 o null
 	        this.numCuenta = 0;
 	        this.titular = "";
-	        this.saldoActual = 0.0;
+	        this.saldoActual = 0;
 	    }
 
 	    // Constructor con parámetros
-	    public EjercicioClase70(int numCuenta, String titular, double saldoActual) {
+	    public EjercicioClase70(int numCuenta, String titular, int saldoActual) {
 	        this.numCuenta = numCuenta;
 	        this.titular = titular;
 	        this.saldoActual = saldoActual;
@@ -47,7 +47,7 @@ package clase70;
 	        return saldoActual;
 	    }
 
-	    public void setSaldoActual(double saldoActual) {
+	    public void setSaldoActual(int saldoActual) {
 	        this.saldoActual = saldoActual;
 	    }
 
@@ -59,7 +59,7 @@ package clase70;
 	    }
 
 	    // Método para ingresar saldo a la cuenta
-	    public void ingresarSaldo(double monto) {
+	    public void ingresarSaldo(int monto) {
 	        saldoActual += monto;
 	        System.out.println("Se han depositado $" + monto + " en la cuenta.");
 	        System.out.println("Nuevo saldo: $" + saldoActual);
@@ -75,7 +75,7 @@ package clase70;
 	        System.out.print("Ingrese el nombre del titular: ");
 	        String titular = scanner.nextLine();
 	        System.out.print("Ingrese el saldo actual: ");
-	        double saldoActual = scanner.nextDouble();
+	        int saldoActual = scanner.nextInt();
 
 	        // Crear un objeto CuentaBancaria
 	        EjercicioClase70 cuenta = new EjercicioClase70(numCuenta, titular, saldoActual);
@@ -86,7 +86,7 @@ package clase70;
 
 	        // Ingresar saldo a la cuenta
 	        System.out.print("\nIngrese la cantidad que desea depositar: ");
-	        double montoDeposito = scanner.nextDouble();
+	        int montoDeposito = scanner.nextInt();
 	        cuenta.ingresarSaldo(montoDeposito);
 
 	        // Cerrar el scanner
