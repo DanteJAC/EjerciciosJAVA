@@ -12,7 +12,7 @@ class Triangulo extends Figura {
 
 	double calcularArea() {
 		// TODO Auto-generated method stub
-		return (getBase() * getAltura()/2) ;
+		return (getBase() * getAltura())/2 ;
 	}
 
                                     

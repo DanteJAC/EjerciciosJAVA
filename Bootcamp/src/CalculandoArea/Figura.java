@@ -5,7 +5,7 @@ public abstract class Figura {
 	private double altura;
 	private double base;
 	private double radio;
-    private final double PI = 3.14159265359; // Valor de PI
+    private double PI = Math.PI;  // Valor de PI
 	/**
 	 * @param altura
 	 * @param base
@@ -17,6 +17,9 @@ public abstract class Figura {
 		this.altura = altura;
 		this.base = base;
 	}
+	
+	abstract double calcularArea();
+	
 	/**
 	 * @return the altura
 	 */
@@ -42,7 +45,7 @@ public abstract class Figura {
 	public double getPI() {
 		return PI;
 	}
-	abstract double calcularArea();
+	
 	 
 	
 }
