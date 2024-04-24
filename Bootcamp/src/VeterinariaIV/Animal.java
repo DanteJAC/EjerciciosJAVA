@@ -3,11 +3,11 @@
  */
 package VeterinariaIV;
 
-/**
- * Interfaz
- */
-public interface Animal {
+//Interfaz Animal
 
-	
-	void reaccionesAnimal(double monto);
+interface Animal {
+
+	void hacerRuido();
+	void comer();
+	void moverse();
 }

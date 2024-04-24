@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
+        var valorPI = 3.14;
         while (true) {
         	System.out.println("------------------------------");
         	System.out.println("            Menú:");
@@ -38,8 +38,7 @@ public class Main {
                 case 2:
                     System.out.println("Ingrese el radio del círculo:");
                     double radioCirculo = scanner.nextDouble();
-                    System.out.println("Valor de Pi ya determinado");
-                    Circulo circulo = new Circulo(Math.PI, radioCirculo);
+                    Circulo circulo = new Circulo(radioCirculo, valorPI);
                     System.out.println("------------------------------");
                     System.out.println("Área del círculo: " + circulo.calcularArea());
                     System.out.println("------------------------------");
@@ -52,7 +51,6 @@ public class Main {
                     Rectangulo rectangulo = new Rectangulo(baseRectangulo, alturaRectangulo);
                     System.out.println("------------------------------");
                     System.out.println("Área del rectángulo: " + rectangulo.calcularArea());
-                    System.out.println("Perímetro del rectángulo: " + rectangulo.calcularArea());
                     System.out.println("------------------------------");
                     break;
                 default:

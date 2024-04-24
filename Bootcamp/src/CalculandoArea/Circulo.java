@@ -7,7 +7,7 @@ class Circulo extends Figura {
 	 * @param PI
 	 * @param Radio
 	 */
-	public Circulo( final double PI, double Radio) {
+	public Circulo( double PI, double Radio) {
 		super(PI, Radio);
 	}
 
@@ -17,6 +17,6 @@ class Circulo extends Figura {
 
 	@Override
     double calcularArea() {
-        return (Math.PI * (getRadio() * getRadio()));
+        return (getPI() * (getRadio() * getRadio() ));
     }
 }

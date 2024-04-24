@@ -2,20 +2,20 @@ package CalculandoArea;
 
 public abstract class Figura {
 
-	private double altura;
-	private double base;
-	private double radio;
-    private double PI = Math.PI;  // Valor de PI
+	private double Valor1;
+	private double Valor2;
+	
 	/**
-	 * @param altura
-	 * @param base
+	 * @param altura = Valor1
+	 * @param base = Valor2
 	 */
 	
 	
-	
-	public Figura(double altura, double base) {
-		this.altura = altura;
-		this.base = base;
+	//
+	public Figura(double Valor1, double Valor2) {
+		this.Valor1 = Valor1;
+		this.Valor2 = Valor2;
+		
 	}
 	
 	abstract double calcularArea();
@@ -24,26 +24,28 @@ public abstract class Figura {
 	 * @return the altura
 	 */
 	public double getAltura() {
-		return altura;
+		return Valor1;
 	}
 	/**
 	 * @return the base
 	 */
 	public double getBase() {
-		return base;
+		return Valor2;
 	}
 	
 	/**
 	 * @return the radio
 	 */
 	public double getRadio() {
-		return radio;
+	//	return radio;
+		return Valor1;
 	}
 	/**
 	 * @return the pI
 	 */
 	public double getPI() {
-		return PI;
+	//	return PI;
+		return Valor2;
 	}
 	
 	 
