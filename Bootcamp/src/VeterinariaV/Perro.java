@@ -1,10 +1,10 @@
-package VeterinariaIV;
+package VeterinariaV;
 
 	// Clase Perro
 	class Perro extends Animal {
 	    @Override
 	    public void hacerRuido() {
-	        System.out.println("El si puede hacer ruido");
+	        System.out.println("El perro ladra: ¡Guau Guau!");
 	    }
 
 	    @Override

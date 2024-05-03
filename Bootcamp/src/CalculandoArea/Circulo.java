@@ -12,11 +12,18 @@ class Circulo extends Figura {
 	}
 
 
-  
+
+    @Override
+	public String obtenerNombre() {
+        return "circulo";
+    }
+
 
 
 	@Override
-    double calcularArea() {
+    public double calcularArea() {
         return (getPI() * (getRadio() * getRadio() ));
     }
+	
+	
 }

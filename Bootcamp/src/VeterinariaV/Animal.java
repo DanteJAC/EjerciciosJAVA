@@ -1,9 +1,9 @@
 /**
  * 
  */
-package VeterinariaIV;
+package VeterinariaV;
 
-//Interfaz Animal
+//clase abstracta Animal
 
 abstract class Animal {
 

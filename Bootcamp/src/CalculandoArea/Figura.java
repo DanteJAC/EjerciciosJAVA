@@ -1,9 +1,12 @@
 package CalculandoArea;
 
-public abstract class Figura {
+public abstract class Figura implements FiguraGeometrica {
 
 	private double Valor1;
 	private double Valor2;
+	private String Circulo;
+	private String Rectangulo;
+	private String Triangulo;
 	
 	/**
 	 * @param altura = Valor1
@@ -18,8 +21,30 @@ public abstract class Figura {
 		
 	}
 	
-	abstract double calcularArea();
 	
+	
+	
+	/**
+	 * @return the circulo
+	 */
+	public String getCirculo() {
+		return Circulo;
+	}
+
+	/**
+	 * @return the rectangulo
+	 */
+	public String getRectangulo() {
+		return Rectangulo;
+	}
+
+	/**
+	 * @return the triangulo
+	 */
+	public String getTriangulo() {
+		return Triangulo;
+	}
+
 	/**
 	 * @return the altura
 	 */

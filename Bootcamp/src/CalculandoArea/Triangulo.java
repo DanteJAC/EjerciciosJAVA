@@ -10,11 +10,14 @@ class Triangulo extends Figura {
 		super(altura, base);
 	}
 
-	double calcularArea() {
-		// TODO Auto-generated method stub
-		return (getBase() * getAltura())/2 ;
+	@Override
+		public double calcularArea() {
+			return (getBase() * getAltura())/2 ;
 	}
 
-                                    
+	 @Override
+	   public String obtenerNombre() {
+	        return "Triángulo";
+	    }                                
 	
 }

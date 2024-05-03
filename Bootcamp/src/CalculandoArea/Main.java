@@ -33,6 +33,7 @@ public class Main {
                     Triangulo triangulo = new Triangulo(baseTriangulo, alturaTriangulo);
                     System.out.println("------------------------------");
                     System.out.println("Área del triángulo: " + triangulo.calcularArea());
+                    System.out.println("Esto es un " + triangulo.obtenerNombre());
                     System.out.println("------------------------------");
                     break;
                 case 2:
@@ -41,6 +42,7 @@ public class Main {
                     Circulo circulo = new Circulo(radioCirculo, valorPI);
                     System.out.println("------------------------------");
                     System.out.println("Área del círculo: " + circulo.calcularArea());
+                    System.out.println("Esto es un " + circulo.obtenerNombre());
                     System.out.println("------------------------------");
                     break;
                 case 3:
@@ -51,8 +53,10 @@ public class Main {
                     Rectangulo rectangulo = new Rectangulo(baseRectangulo, alturaRectangulo);
                     System.out.println("------------------------------");
                     System.out.println("Área del rectángulo: " + rectangulo.calcularArea());
+                    System.out.println("Esto es un " + rectangulo.obtenerNombre());
                     System.out.println("------------------------------");
                     break;
+                    
                 default:
                     System.out.println("Opción inválida. Por favor, seleccione nuevamente.");
             }

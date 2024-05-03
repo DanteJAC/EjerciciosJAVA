@@ -1,23 +1,35 @@
 package VeterinariaIV;
 
 //Clase Ave
-class Ave implements Animal {
+class Ave extends Animal {
  @Override
- public void hacerRuido() {
+
+void hacerRuido() {
      System.out.println("El ave canta melodiosamente.");
  }
 
  @Override
- public void comer() {
+ void comer() {
      System.out.println("El ave picotea semillas y gusanos.");
  }
 
  @Override
- public void moverse() {
+void moverse() {
      System.out.println("El ave vuela por el cielo.");
  }
 
- public void anidar() {
-     System.out.println("El ave construye su nido en las ramas.");
- }
+
+@Override
+void volar() {
+	// TODO Auto-generated method stub
+	
+}
+
+@Override
+void picotear() {
+	// TODO Auto-generated method stub
+	
+}
+ 
+ 	
 }

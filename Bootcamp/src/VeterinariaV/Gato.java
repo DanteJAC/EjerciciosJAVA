@@ -1,4 +1,4 @@
-package VeterinariaIV;
+package VeterinariaV;
 
 //Clase Gato
 class Gato extends Animal {

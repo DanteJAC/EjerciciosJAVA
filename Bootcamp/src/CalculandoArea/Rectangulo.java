@@ -12,9 +12,14 @@ class Rectangulo extends Figura {
 		super(altura, base);
 	}
 
-	
+
     @Override
-    double calcularArea() {
+   public String obtenerNombre() {
+        return "Rectángulo";
+    }
+
+    @Override
+   public double calcularArea() {
         return (getBase() * getAltura());
     }
 }
